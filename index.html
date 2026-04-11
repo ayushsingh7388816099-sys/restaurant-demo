@@ -3,162 +3,181 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>AYUSH Restaurant</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
-<a href="https://wa.me/919793765411?text=Hello%20AYUSH%20Restaurant,%20I%20want%20to%20order%20food.%20I%20will%20share%20my%20location." 
-target="_blank" 
-style="
-position:fixed;
-bottom:25px;
-right:25px;
-background:#25D366;
-color:white;
-padding:15px 20px;
-border-radius:50px;
-text-decoration:none;
-font-weight:bold;
-display:flex;
-align-items:center;
-gap:10px;
-box-shadow:0 0 15px rgba(0,255,100,0.6);
-z-index:9999;
-animation:pulse 1.5s infinite;
-">
-
-<img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" width="25">
-Order Now
-</a>
-
-<style>
-@keyframes pulse {
-0% {transform: scale(1);}
-50% {transform: scale(1.05);}
-100% {transform: scale(1);}
-}
-</style>
-  body {
+body{
 margin:0;
-font-family: 'Playfair Display', serif;
-background:black;
+font-family:'Poppins',sans-serif;
+background:#0a0a0a;
 color:white;
+scroll-behavior:smooth;
 }
+
+/* NAVBAR */
+nav{
+position:fixed;
+width:100%;
+top:0;
+display:flex;
+justify-content:space-between;
+padding:15px 30px;
+background:rgba(0,0,0,0.6);
+backdrop-filter:blur(10px);
+z-index:1000;
+}
+nav h2{margin:0;color:#fff;}
+nav a{color:white;margin-left:15px;text-decoration:none;}
 
 /* HERO */
-.hero {
+.hero{
 height:100vh;
-background:url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5') no-repeat center/cover;
+background:url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5') center/cover;
 display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
 }
-
-.hero h1 {
+.hero h1{
 font-size:60px;
-letter-spacing:3px;
+letter-spacing:2px;
 }
-
-.hero p {
+.hero p{
 font-size:20px;
+opacity:0.8;
+}
+.btn{
+margin-top:20px;
+padding:12px 25px;
+background:#ff3c3c;
+border-radius:30px;
+text-decoration:none;
+color:white;
 }
 
 /* SECTION */
-.section {
-padding:60px 20px;
+.section{
+padding:80px 20px;
 text-align:center;
 }
 
 /* MENU */
-.menu {
+.menu{
 display:flex;
 flex-wrap:wrap;
 justify-content:center;
-gap:30px;
+gap:20px;
 }
-
-.item {
+.card{
+background:rgba(255,255,255,0.05);
+padding:15px;
+border-radius:15px;
+backdrop-filter:blur(10px);
+transition:0.3s;
+}
+.card:hover{
+transform:translateY(-10px);
+}
+.card img{
 width:250px;
-}
-
-.item img {
-width:100%;
 border-radius:10px;
 }
 
 /* GALLERY */
-.gallery {
+.gallery{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
 gap:10px;
 }
-
-.gallery img {
+.gallery img{
 width:100%;
 height:200px;
 object-fit:cover;
 }
 
+/* FOOTER */
+footer{
+padding:40px;
+text-align:center;
+background:#111;
+}
+
 /* WHATSAPP */
-.whatsapp {
+.whatsapp{
 position:fixed;
-bottom:20px;
-right:20px;
+bottom:25px;
+right:25px;
 background:#25D366;
-padding:15px;
+padding:15px 20px;
 border-radius:50px;
-text-decoration:none;
 color:white;
+display:flex;
+gap:10px;
+align-items:center;
+text-decoration:none;
 font-weight:bold;
+box-shadow:0 0 15px rgba(0,255,100,0.6);
+animation:pulse 1.5s infinite;
+z-index:9999;
 }
 
-/* FADE ANIMATION */
-.fade {
-opacity:0;
-transform:translateY(30px);
-transition:1s;
-}
-
-.fade.show {
-opacity:1;
-transform:translateY(0);
+@keyframes pulse{
+0%{transform:scale(1);}
+50%{transform:scale(1.05);}
+100%{transform:scale(1);}
 }
 </style>
 </head>
 
 <body>
 
+<!-- NAVBAR -->
+<nav>
+<h2>AYUSH</h2>
+<div>
+<a href="#">Home</a>
+<a href="#menu">Menu</a>
+<a href="#contact">Contact</a>
+</div>
+</nav>
+
 <!-- HERO -->
 <div class="hero">
 <h1>AYUSH Restaurant</h1>
-<p>Luxury Pure Veg Dining Experience</p>
+<p>Premium Pure Veg Dining Experience 🍽️</p>
+<a href="#menu" class="btn">Explore Menu</a>
 </div>
 
 <!-- ABOUT -->
-<div class="section fade">
+<div class="section">
 <h2>About Us</h2>
-<p>Experience premium taste with our handcrafted veg dishes made with love and quality ingredients.</p>
+<p>
+Welcome to AYUSH Restaurant — where taste meets luxury.
+We serve fresh, pure vegetarian dishes crafted with passion.
+Our goal is to give you a modern dining experience with traditional flavors.
+</p>
 </div>
 
 <!-- MENU -->
-<div class="section fade">
+<div class="section" id="menu">
 <h2>Our Menu</h2>
 <div class="menu">
 
-<div class="item">
+<div class="card">
 <img src="https://images.unsplash.com/photo-1604908176997-125f25cc6f3d">
 <h3>Paneer Butter Masala</h3>
 </div>
 
-<div class="item">
+<div class="card">
 <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c">
 <h3>Veg Biryani</h3>
 </div>
 
-<div class="item">
+<div class="card">
 <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950">
 <h3>Dal Tadka</h3>
 </div>
@@ -167,7 +186,7 @@ transform:translateY(0);
 </div>
 
 <!-- GALLERY -->
-<div class="section fade">
+<div class="section">
 <h2>Gallery</h2>
 <div class="gallery">
 <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836">
@@ -177,35 +196,26 @@ transform:translateY(0);
 </div>
 
 <!-- CONTACT -->
-<div class="section fade">
+<div class="section" id="contact">
 <h2>Contact</h2>
 <p>📍 EWS 305, Rail Vihar, Raptinagar, Gorakhpur</p>
-<p><b>📍 Please share your location on WhatsApp while ordering</b></p>
+<p>📍 Please share your location on WhatsApp while ordering</p>
 </div>
 
 <!-- MAP -->
 <iframe src="https://www.google.com/maps?q=Gorakhpur&output=embed"
 width="100%" height="300"></iframe>
 
+<!-- FOOTER -->
+<footer>
+<p>© 2026 AYUSH Restaurant | All Rights Reserved</p>
+</footer>
+
 <!-- WHATSAPP -->
-<a href="https://wa.me/919876543210?text=Hello%20AYUSH%20Restaurant,%20I%20want%20to%20order%20food.%20I%20will%20share%20my%20location." 
-target="_blank" class="whatsapp">
+<a href="https://wa.me/919793765411?text=Hello%20AYUSH%20Restaurant,%20I%20want%20to%20order%20food.%20I%20will%20share%20my%20location." class="whatsapp">
+<img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" width="25">
 Order Now
 </a>
-
-<!-- JS ANIMATION -->
-<script>
-const fades = document.querySelectorAll('.fade');
-
-window.addEventListener('scroll', () => {
-fades.forEach(el => {
-const top = el.getBoundingClientRect().top;
-if(top < window.innerHeight - 100){
-el.classList.add('show');
-}
-});
-});
-</script>
 
 </body>
 </html>
