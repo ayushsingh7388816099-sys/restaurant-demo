@@ -1,98 +1,120 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Premium Restaurant</title>
+<title>AYUSH Restaurant</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
 
 <style>
-body {margin:0;font-family:Arial;}
-
-header {
-background:#111;
+body {
+margin:0;
+font-family: 'Playfair Display', serif;
+background:black;
 color:white;
-padding:15px;
+}
+
+/* HERO */
+.hero {
+height:100vh;
+background:url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5') no-repeat center/cover;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
 text-align:center;
 }
 
-.slider {
-position:relative;
-height:100vh;
-overflow:hidden;
-}
-.slider img {
-position:absolute;
-width:100%;
-height:100%;
-object-fit:cover;
-animation:slide 12s infinite;
-}
-.slider img:nth-child(2){animation-delay:4s;}
-.slider img:nth-child(3){animation-delay:8s;}
-
-@keyframes slide {
-0%{opacity:0;}
-10%{opacity:1;}
-30%{opacity:1;}
-40%{opacity:0;}
-100%{opacity:0;}
+.hero h1 {
+font-size:60px;
+letter-spacing:3px;
 }
 
-section {padding:40px;text-align:center;}
+.hero p {
+font-size:20px;
+}
 
+/* SECTION */
+.section {
+padding:60px 20px;
+text-align:center;
+}
+
+/* MENU */
 .menu {
 display:flex;
-gap:20px;
-justify-content:center;
 flex-wrap:wrap;
+justify-content:center;
+gap:30px;
 }
+
 .item {
-background:#f5f5f5;
-padding:15px;
-border-radius:10px;
+width:250px;
 }
+
 .item img {
-width:200px;
+width:100%;
 border-radius:10px;
 }
 
-form input, form button {
-padding:10px;
-margin:5px;
+/* GALLERY */
+.gallery {
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:10px;
 }
 
-<a href="https://wa.me/919876543210?text=Hello%20AYUSH%20Restaurant,%20I%20want%20to%20order%20food.%20I%20will%20share%20my%20location." 
-target="_blank" 
-style="
+.gallery img {
+width:100%;
+height:200px;
+object-fit:cover;
+}
+
+/* WHATSAPP */
+.whatsapp {
 position:fixed;
 bottom:20px;
 right:20px;
 background:#25D366;
-color:white;
 padding:15px;
 border-radius:50px;
 text-decoration:none;
-font-weight:bold;">
-💬 Order on WhatsApp
-</a>
+color:white;
+font-weight:bold;
+}
+
+/* FADE ANIMATION */
+.fade {
+opacity:0;
+transform:translateY(30px);
+transition:1s;
+}
+
+.fade.show {
+opacity:1;
+transform:translateY(0);
+}
 </style>
 </head>
 
 <body>
 
-<header>
-<h1>Ayush Restaurant</h1>
-</header>
-
-<!-- Slider -->
-<div class="slider">
-<img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5">
-<img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836">
-<img src="https://images.unsplash.com/photo-1498654896293-37aacf113fd9">
+<!-- HERO -->
+<div class="hero">
+<h1>AYUSH Restaurant</h1>
+<p>Luxury Pure Veg Dining Experience</p>
 </div>
 
-<section>
-<h2>Our Pure Veg Menu</h2>
+<!-- ABOUT -->
+<div class="section fade">
+<h2>About Us</h2>
+<p>Experience premium taste with our handcrafted veg dishes made with love and quality ingredients.</p>
+</div>
+
+<!-- MENU -->
+<div class="section fade">
+<h2>Our Menu</h2>
 <div class="menu">
 
 <div class="item">
@@ -106,46 +128,53 @@ font-weight:bold;">
 </div>
 
 <div class="item">
-<img src="https://images.unsplash.com/photo-1625943553852-781c6dd46faa">
-<h3>Mix Veg Curry</h3>
-</div>
-
-<div class="item">
 <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950">
 <h3>Dal Tadka</h3>
 </div>
 
 </div>
-</section>
+</div>
 
-<!-- Booking -->
-<section>
-<h2>Book a Table</h2>
-<form>
-<input type="text" placeholder="Name" required><br>
-<input type="number" placeholder="Guests" required><br>
-<input type="date" required><br>
-<button type="submit">Book Now</button>
-</form>
-</section>
+<!-- GALLERY -->
+<div class="section fade">
+<h2>Gallery</h2>
+<div class="gallery">
+<img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836">
+<img src="https://images.unsplash.com/photo-1498654896293-37aacf113fd9">
+<img src="https://images.unsplash.com/photo-1551782450-a2132b4ba21d">
+</div>
+</div>
 
-<!-- Reviews -->
-<section>
-<h2>Customer Reviews</h2>
-<p>⭐️⭐️⭐️⭐️⭐️ Amazing food!</p>
-<p>⭐️⭐️⭐️⭐️ Great service</p>
-</section>
-
-<h2 style="text-align:center;">Our Location</h2>
-<iframe 
-src="https://www.google.com/maps?q=EWS 305 Railvihar Raptinagar Gorakhpur&output=embed"
-width="100%" height="300"></iframe>
-
-<section>
+<!-- CONTACT -->
+<div class="section fade">
 <h2>Contact</h2>
 <p>📍 EWS 305, Rail Vihar, Raptinagar, Gorakhpur</p>
-<p>📞 9876543210</p>
-</section>
+<p><b>📍 Please share your location on WhatsApp while ordering</b></p>
+</div>
+
+<!-- MAP -->
+<iframe src="https://www.google.com/maps?q=Gorakhpur&output=embed"
+width="100%" height="300"></iframe>
+
+<!-- WHATSAPP -->
+<a href="https://wa.me/919876543210?text=Hello%20AYUSH%20Restaurant,%20I%20want%20to%20order%20food.%20I%20will%20share%20my%20location." 
+target="_blank" class="whatsapp">
+Order Now
+</a>
+
+<!-- JS ANIMATION -->
+<script>
+const fades = document.querySelectorAll('.fade');
+
+window.addEventListener('scroll', () => {
+fades.forEach(el => {
+const top = el.getBoundingClientRect().top;
+if(top < window.innerHeight - 100){
+el.classList.add('show');
+}
+});
+});
+</script>
 
 </body>
 </html>
